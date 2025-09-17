@@ -47,32 +47,25 @@ Whether embedded inline, shown as a sidebar, or opened as a modal dialog, the Ed
 To start using components from the **Editor** package, simply import the package and include the desired component in your react file:
 
 ```jsx
-import { Button } from "@svar-ui/react-editor";
+import { Editor } from "@svar-ui/react-editor";
+import "@svar-ui/react-editor/all.css";
 
-const myComponent => (<Button>Click me</Button>);
+const items = [
+   { comp: 'text', key: 'name', label: 'Name', column: 'left' },
+   { comp: 'checkbox', key: 'admin', label: 'Is Admin' },
+   { comp: 'text', key: 'email', label: 'Email' },
+   {
+   comp: 'textarea',
+   key: 'descr',
+   label: 'Description',
+   column: 'left',
+   },
+];
+
+const myComponent => (<Editor items={items} />);
 ```
 
 See the [getting started guide](https://docs.svar.dev/react/editor/getting_started/) to quickly set up and begin using SVAR Editor component in your React projects.
-
-### :computer: How to Modify
-
-Typically, you don't need to modify the code. However, if you wish to do so, follow these steps:
-
-1. Run `yarn` to install dependencies. Note that this project is a monorepo using `yarn` workspaces, so npm will not work
-2. Start the project in development mode with `yarn start`
-
-### :white_check_mark: Run Tests
-
-To run the test:
-
-1. Start the test examples with:
-   ```sh
-   yarn start:tests
-   ```
-2. In a separate console, run the end-to-end tests with:
-   ```sh
-   yarn test:cypress
-   ```
 
 ### :speech_balloon: Need Help?
 
