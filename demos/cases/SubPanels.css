@@ -1,0 +1,18 @@
+.variations.wx-GNsBw05P {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.variations.wx-GNsBw05P > div {
+  margin: 0 20px 60px 20px;
+  width: 400px;
+}
+.bg-top.wx-GNsBw05P {
+  padding: 10px;
+  height: 100%;
+}
+.bg.wx-GNsBw05P {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  height: 100%;
+}

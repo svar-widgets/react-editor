@@ -1,0 +1,17 @@
+.wx-section.wx-OmgQq65I {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  padding: 6px;
+}
+.wx-section-active.wx-OmgQq65I {
+  background-color: var(--wx-background-alt);
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+.wx-section.wx-OmgQq65I .wx-icon.wx-OmgQq65I {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  font-size: 25px;
+}

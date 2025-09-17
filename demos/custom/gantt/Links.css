@@ -1,0 +1,38 @@
+.wx-links.wx-C4q2UFW7 {
+  margin-bottom: 10px;
+}
+
+.wx-cell.wx-C4q2UFW7 {
+  text-align: center;
+}
+
+.wx-task-name.wx-C4q2UFW7 {
+  font-family: var(--wx-input-font-family);
+  font-size: var(--wx-input-font-size);
+  font-weight: var(--wx-input-font-weigth);
+  color: var(--wx-input-font-color);
+  width: 170px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.wx-wrapper.wx-C4q2UFW7 {
+  position: relative;
+  display: flex;
+}
+
+.wx-delete-icon.wx-C4q2UFW7 {
+  margin-left: 12px;
+  position: relative;
+  top: 2px;
+
+  font-size: var(--wx-icon-size);
+  cursor: pointer;
+  color: var(--wx-gantt-icon-color);
+}
+
+.wx-delete-icon.wx-C4q2UFW7:hover {
+  color: var(--wx-color-primary);
+}

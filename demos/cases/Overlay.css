@@ -1,0 +1,22 @@
+.variations.wx-JK8ehX8O {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.variations.wx-JK8ehX8O > div {
+  margin: 0 20px 60px 20px;
+  width: 400px;
+}
+.bg.wx-JK8ehX8O {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  height: 100%;
+}
+.bg .overlay-editor .wx-cols .wx-left {
+  min-width: 150px;
+  width: 150px;
+}
+.bg .overlay-editor .wx-cols .wx-right {
+  min-height: 100px;
+  width: 150px;
+}

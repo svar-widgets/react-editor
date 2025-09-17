@@ -1,0 +1,20 @@
+.toolbar.wx-w6KOZyis {
+  display: flex;
+  align-items: flex-start;
+  overflow-y: auto;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.toolbar.wx-w6KOZyis .item.wx-w6KOZyis {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor.wx-w6KOZyis {
+  margin: 40px;
+  height: 400px;
+  width: 600px;
+  overflow: scroll;
+}

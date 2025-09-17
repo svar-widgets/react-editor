@@ -1,0 +1,24 @@
+.wx-panel.wx-85HDaNoA {
+  padding: 16px 0;
+  max-height: 100vh;
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.wx-content.wx-85HDaNoA {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.wx-inline-form.wx-85HDaNoA,
+.wx-inline-form.wx-85HDaNoA .wx-content.wx-85HDaNoA {
+  overflow: visible;
+}
+
+.wx-content.wx-layout-columns.wx-85HDaNoA {
+  overflow-y: hidden;
+  /* grid needs for layout columns with bottom bar */
+  display: grid;
+  grid-template-rows: minmax(0, auto) 1fr;
+}

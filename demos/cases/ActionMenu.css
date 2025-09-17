@@ -1,0 +1,25 @@
+.bg .wx-topbar {
+  border-bottom: 1px solid #ccc;
+}
+.message.wx-rFV3gN4Y {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.variations.wx-rFV3gN4Y {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.variations.wx-rFV3gN4Y > div {
+  margin: 0 10px 60px 20px;
+  width: 400px;
+}
+.bg.wx-rFV3gN4Y {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #ccc;
+  padding: 10px;
+  height: 100%;
+}

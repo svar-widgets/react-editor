@@ -1,0 +1,10 @@
+.editor.wx-lock {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  height: 600px;
+  width: 600px;
+}
+
+.sections {
+  height: 100%;
+}

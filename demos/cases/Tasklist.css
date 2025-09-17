@@ -1,0 +1,22 @@
+.message.wx-1KiwXQ8y {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.list.wx-1KiwXQ8y {
+  margin: 10px;
+}
+.item.wx-1KiwXQ8y {
+  margin: 10px;
+  width: 360px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #eee;
+  padding: 0px 15px 10px 15px;
+}
+.item.wx-1KiwXQ8y.active {
+  border-left: 3px solid #2e51ff;
+  box-shadow: 0 0 5px #aaa;
+  padding-left: 13px;
+}

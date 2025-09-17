@@ -1,0 +1,34 @@
+.wx-user.wx-eM9Jr6oC {
+  border-radius: 50%;
+  background: var(--wx-kanban-background);
+
+  color: var(--wx-color-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--wx-kanban-background);
+}
+
+.wx-user.wx-eM9Jr6oC.normal {
+  width: 36px;
+  height: 36px;
+  font-size: var(--wx-font-size);
+}
+
+.wx-user.wx-eM9Jr6oC.small {
+  width: 28px;
+  height: 28px;
+  font-size: var(--wx-font-size-sm);
+}
+
+.wx-user.wx-eM9Jr6oC img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wx-user:not(:first-child) {
+  margin-left: -15px;
+}

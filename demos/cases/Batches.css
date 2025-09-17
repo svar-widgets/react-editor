@@ -1,0 +1,17 @@
+.top.wx-qgutpcQy {
+  margin-bottom: 10px;
+}
+.variations.wx-qgutpcQy {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.variations.wx-qgutpcQy > div {
+  margin: 0 20px 60px 20px;
+  width: 400px;
+}
+.bg.wx-qgutpcQy {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  height: 100%;
+}

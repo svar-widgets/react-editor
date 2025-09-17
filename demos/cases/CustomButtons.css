@@ -1,0 +1,22 @@
+.message.wx-7Ed2jd0w {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.variations.wx-7Ed2jd0w {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.variations.wx-7Ed2jd0w > div {
+  margin: 0 10px 60px 20px;
+  width: 400px;
+}
+.bg.wx-7Ed2jd0w {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #ccc;
+  padding: 10px;
+  height: 100%;
+}

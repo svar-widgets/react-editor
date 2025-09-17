@@ -1,0 +1,19 @@
+.tasks.wx-VmEtBFHJ {
+  margin: 10px;
+}
+.item.wx-VmEtBFHJ {
+  margin: 10px;
+  width: fit-content;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 0 5px #eee;
+}
+.item.wx-VmEtBFHJ.active.wx-VmEtBFHJ {
+  border-left: 3px solid #2e51ff;
+  box-shadow: 0 0 5px #aaa;
+}
+.content.wx-VmEtBFHJ {
+  padding: 5px 60px;
+  text-align: center;
+  background: #00ba94;
+}

@@ -1,0 +1,15 @@
+.data.wx-Um0x7joh {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
+  width: 400px;
+  border: var(--wx-border);
+  border-radius: 3px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.data.active.wx-Um0x7joh {
+  border: 1px solid var(--wx-color-primary);
+}

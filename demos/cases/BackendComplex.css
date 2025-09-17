@@ -1,0 +1,22 @@
+.message.wx-f9E2TjM8 {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.list.wx-f9E2TjM8 {
+  margin: 10px;
+}
+.item.wx-f9E2TjM8 {
+  margin: 10px;
+  width: 360px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #eee;
+  padding: 0px 15px 10px 15px;
+}
+.item.active.wx-f9E2TjM8 {
+  border-left: 3px solid #2e51ff;
+  box-shadow: 0 0 5px #aaa;
+  padding-left: 13px;
+}

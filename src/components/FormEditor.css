@@ -1,0 +1,15 @@
+.wx-sections.wx-s2aE1xdZ {
+  text-align: left;
+  --wx-field-width: 600px;
+  margin: 12px 20px 0;
+}
+.wx-message.wx-s2aE1xdZ {
+  margin-top: calc(var(--wx-field-gutter) * -1);
+  font-size: 12px;
+  line-height: var(--wx-field-gutter);
+  color: var(--wx-color-danger);
+  width: inherit;
+}
+.wx-overlay.wx-s2aE1xdZ {
+  font-weight: 600;
+}
