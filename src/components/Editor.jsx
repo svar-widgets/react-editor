@@ -14,7 +14,6 @@ export default function Editor(props) {
     bottomBar = true,
     focus = false,
     autoSave = false,
-    autoApply = false,
     layout = 'default',
     readonly = false,
     placement = 'inline',
@@ -49,7 +48,6 @@ export default function Editor(props) {
         bottomBar={bottomBar}
         focus={focus}
         autoSave={autoSave}
-        autoApply={autoApply}
         layout={layout}
         readonly={readonly}
         placement={placement}

@@ -38,16 +38,16 @@ export default function Values({
         if (x.comp === 'section') {
           if (x.key === activatedSection) {
             if (x.sectionMode === 'accordion') {
-              if (!x.active) {
+              if (!x.activeSection) {
                 editorsObj.config.forEach((y) => {
                   if (y.comp === 'section' && y.key !== x.key) {
-                    y.active = false;
+                    y.activeSection = false;
                   }
                 });
-                x.active = true;
+                x.activeSection = true;
               }
             } else {
-              x.active = !x.active;
+              x.activeSection = !x.activeSection;
             }
           }
         }
@@ -58,8 +58,8 @@ export default function Values({
     let exclusive = null;
 
     editorsObj.config.forEach((x) => {
-      if (x.sectionMode === 'exclusive' && x.active) exclusive = x.key;
-      if (x.active) sections.add(x.key);
+      if (x.sectionMode === 'exclusive' && x.activeSection) exclusive = x.key;
+      if (x.activeSection) sections.add(x.key);
     });
 
     editorsObj.config.forEach((x) => {

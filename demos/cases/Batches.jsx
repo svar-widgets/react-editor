@@ -35,7 +35,7 @@ export default function Batches() {
         <h3>Segmented</h3>
         <div className="wx-qgutpcQy bg">
           <Editor
-            topBar={[]}
+            topBar={false}
             items={batchItems}
             values={values}
             activeBatch={activeBatch}
@@ -54,7 +54,7 @@ export default function Batches() {
         <h3>Tabbar</h3>
         <div className="wx-qgutpcQy bg">
           <Editor
-            topBar={[]}
+            topBar={false}
             items={batchItems}
             values={values}
             activeBatch={activeBatch}
@@ -76,7 +76,7 @@ export default function Batches() {
             items={batchItems}
             values={values}
             activeBatch={activeBatch}
-            topBar={[]}
+            topBar={false}
           >
             <Toolbar
               values={toolbarValues}

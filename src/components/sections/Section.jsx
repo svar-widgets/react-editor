@@ -1,19 +1,19 @@
 import './Section.css';
 
-function Section({ fieldKey, label, active, onClick }) {
+function Section({ fieldKey, label, activeSection, onClick }) {
   return (
     <div
-      className={`wx-OmgQq65I wx-section${active ? ' wx-section-active' : ''}`}
+      className={`wx-OmgQq65I wx-section${activeSection ? ' wx-section-active' : ''}`}
       onClick={() =>
         onClick &&
         onClick({
-          item: { id: 'toggle-section', key: active ? null : fieldKey },
+          item: { id: 'toggle-section', key: activeSection ? null : fieldKey },
         })
       }
     >
       <h3>{label}</h3>
       <i
-        className={`wx-OmgQq65I wxi-angle-${active ? 'down' : 'right'} wx-icon`}
+        className={`wx-OmgQq65I wxi-angle-${activeSection ? 'down' : 'right'} wx-icon`}
       ></i>
     </div>
   );

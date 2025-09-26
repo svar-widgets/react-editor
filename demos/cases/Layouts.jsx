@@ -17,15 +17,7 @@ const config1 = {
   autoSave: false,
   items: [
     { comp: 'text', key: 'name', label: 'Name', column: 'left' },
-    {
-      comp: 'select',
-      key: 'role',
-      label: 'Role',
-      options: [
-        { id: 'admin', label: 'Admin' },
-        { id: 'user', label: 'User' },
-      ],
-    },
+    { comp: "checkbox", key: "admin", label: "Is Admin" },
     { comp: 'tasks', key: 'task', label: 'Tasks' },
     {
       comp: 'comments',
@@ -44,15 +36,7 @@ const config2 = {
   autoSave: false,
   items: [
     { comp: 'text', key: 'name', label: 'Name', column: 'left' },
-    {
-      comp: 'select',
-      key: 'role',
-      label: 'Role',
-      options: [
-        { id: 'admin', label: 'Admin' },
-        { id: 'user', label: 'User' },
-      ],
-    },
+    { comp: "checkbox", key: "admin", label: "Is Admin" },
     { comp: 'tasks', key: 'task', label: 'Tasks', column: 'left' },
     {
       comp: 'comments',
@@ -69,15 +53,7 @@ const config3 = {
   autoSave: true,
   items: [
     { comp: 'text', key: 'name', label: 'Name' },
-    {
-      comp: 'select',
-      key: 'role',
-      label: 'Role',
-      options: [
-        { id: 'admin', label: 'Admin' },
-        { id: 'user', label: 'User' },
-      ],
-    },
+    { comp: "checkbox", key: "admin", label: "Is Admin" },
     { comp: 'tasks', key: 'task', label: 'Tasks' },
     {
       comp: 'comments',
@@ -94,15 +70,7 @@ const config4 = {
   autoSave: true,
   items: [
     { comp: 'text', key: 'name', label: 'Name' },
-    {
-      comp: 'select',
-      key: 'role',
-      label: 'Role',
-      options: [
-        { id: 'admin', label: 'Admin' },
-        { id: 'user', label: 'User' },
-      ],
-    },
+    { comp: "checkbox", key: "admin", label: "Is Admin" },
     { comp: 'tasks', key: 'task', label: 'Tasks' },
     {
       comp: 'comments',

@@ -10,7 +10,7 @@
 
 <div align="center">
 
-[Documentation](https://docs.svar.dev/react/editor/getting_started/) • [Demos](https://docs.svar.dev/react/editor/samples/#/base/willow)
+[Documentation](https://docs.svar.dev/react/editor/getting_started/) • [Demos](https://docs.svar.dev/react/editor/samples/)
 
 </div>
 

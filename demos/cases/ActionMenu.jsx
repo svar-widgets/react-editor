@@ -20,7 +20,6 @@ export default function ActionMenu() {
           <div className="wx-rFV3gN4Y bg">
             <Editor
               topBar={{
-                css: 'separated',
                 items: [
                   {
                     comp: 'label',
@@ -32,7 +31,6 @@ export default function ActionMenu() {
                     icon: 'wxi-dots-v',
                     collapsed: true,
                     layout: 'column',
-                    menu: true,
                     items: [
                       {
                         id: 'done',

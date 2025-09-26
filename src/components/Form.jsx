@@ -12,7 +12,6 @@ function Form({
   activeBatch = null,
   focus = false,
   autoSave = true,
-  autoApply = true,
   readonly = false,
   children,
   ...restProps
@@ -42,7 +41,6 @@ function Form({
           focus={focus}
           activeBatch={activeBatch}
           autoSave={autoSave}
-          autoApply={autoApply}
           readonly={readonly}
           {...processedRestProps}
         >
