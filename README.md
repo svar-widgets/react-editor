@@ -40,7 +40,9 @@ Whether embedded inline, shown as a sidebar, or opened as a modal dialog, the Ed
 - Data validation (required fields, numbers, text);
 - Localization support (labels, tooltips, messages);
 - Light & dark themes;
-- Custom styling via CSS.
+- Custom styling via CSS;
+- TypeScript support;
+- React 18 and 19 compatibility.
 
 ### :hammer_and_wrench: How to Use
 
