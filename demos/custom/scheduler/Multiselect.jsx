@@ -1,7 +1,7 @@
 import { MultiCombo } from '@svar-ui/react-core';
 
 export default function Multiselect(props) {
-  const { value, options, template, onchange: onChange, ...restProps } = props;
+  const { value, options, template, onChange, ...restProps } = props;
 
   return (
     <MultiCombo

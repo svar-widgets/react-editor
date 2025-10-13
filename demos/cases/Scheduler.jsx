@@ -8,7 +8,7 @@ import Multiselect from '../custom/scheduler/Multiselect.jsx';
 import MultiselectOption from '../custom/scheduler/templates/MultiselectOption.jsx';
 import ComboOption from '../custom/scheduler/templates/ComboOption.jsx';
 import ColorPickerSchema from '../custom/scheduler/ColorPickerSchema.jsx';
-import Uploader from '../custom/scheduler/Uploader.jsx';
+// import Uploader from '../custom/scheduler/Uploader.jsx';
 
 import './Scheduler.css';
 
@@ -17,7 +17,7 @@ registerEditorItem('sheduler-multiselect', Multiselect);
 registerEditorItem('sheduler-combo', Combo);
 registerEditorItem('radio-group', RadioButtonGroup);
 registerEditorItem('color-schema', ColorPickerSchema);
-registerEditorItem('files', Uploader);
+// registerEditorItem('files', Uploader);
 
 const listItems = [
   {
@@ -114,21 +114,21 @@ const listItems = [
     ],
     template: MultiselectOption,
   },
-  {
-    comp: 'radio-group',
-    key: 'radio',
-    label: 'Radio Group',
-    options: [
-      {
-        value: 's',
-        label: 'Scorpions',
-      },
-      {
-        value: 'm',
-        label: 'Muse',
-      },
-    ],
-  },
+  // {
+  //   comp: 'radio-group',
+  //   key: 'radio',
+  //   label: 'Radio Group',
+  //   options: [
+  //     {
+  //       value: 's',
+  //       label: 'Scorpions',
+  //     },
+  //     {
+  //       value: 'm',
+  //       label: 'Muse',
+  //     },
+  //   ],
+  // },
   {
     comp: 'color-schema',
     key: 'color',
@@ -157,15 +157,15 @@ const listItems = [
       { background: '#3D446F', border: '#2A2F50' },
     ],
   },
-  {
-    key: 'files',
-    comp: 'files',
-    label: 'Attachments',
-    config: {
-      multiple: true,
-    },
-    uploadURL: '/uploads',
-  },
+  // {
+  //   key: 'files',
+  //   comp: 'files',
+  //   label: 'Attachments',
+  //   config: {
+  //     multiple: true,
+  //   },
+  //   uploadURL: '/uploads',
+  // },
 ];
 
 export default function Scheduler() {

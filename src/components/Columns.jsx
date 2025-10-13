@@ -3,9 +3,7 @@ import Editor from './FormEditor.jsx';
 import './Columns.css';
 
 function Columns(props) {
-  const { editors, data, layout, errors, focus } = props;
-  const onClick = props.onClick ?? props.onclick;
-  const onChange = props.onChange ?? props.onchange;
+  const { editors, data, layout, errors, focus, onClick, onChange } = props;
 
   const columns = useMemo(() => {
     let cols = [];
@@ -43,8 +41,6 @@ function Columns(props) {
             errors={errors}
             onClick={onClick}
             onChange={onChange}
-            onclick={onClick}
-            onchange={onChange}
           />
         </div>
         <div className="wx-bNrSbszs wx-right">
@@ -55,8 +51,6 @@ function Columns(props) {
             errors={errors}
             onClick={onClick}
             onChange={onChange}
-            onclick={onClick}
-            onchange={onChange}
           />
         </div>
       </div>
@@ -71,8 +65,6 @@ function Columns(props) {
       errors={errors}
       onClick={onClick}
       onChange={onChange}
-      onclick={onClick}
-      onchange={onChange}
     />
   );
 }

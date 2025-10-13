@@ -33,7 +33,6 @@ Whether embedded inline, shown as a sidebar, or opened as a modal dialog, the Ed
 - Form fields can be displayed in batches (with one visible at a time);
 - Tabbed sections;
 - Collapsible or accordion-style sections,
-- Always-visible fields support;
 - Prefilled values support;
 - Editable or read-only modes;
 - Handle real-time updates and custom save actions;

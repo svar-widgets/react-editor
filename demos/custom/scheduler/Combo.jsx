@@ -1,7 +1,7 @@
 import { Combo as CoreCombo } from '@svar-ui/react-core';
 
 export default function Combo(props) {
-  const { template, value, onchange: onChange, options, ...restProps } = props;
+  const { template, value, onChange, options, ...restProps } = props;
 
   return (
     <CoreCombo

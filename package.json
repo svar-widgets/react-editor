@@ -1,6 +1,6 @@
 {
   "name": "@svar-ui/react-editor",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "React component for building inline, popup, or sidebar forms to edit structured data",
   "productTag": "editor",
   "type": "module",
@@ -54,10 +54,10 @@
     "@svar-ui/editor-locales": "^2.3.1",
     "@svar-ui/lib-dom": "0.9.2",
     "@svar-ui/lib-state": "1.9.6",
-    "@svar-ui/react-comments": "2.3.0",
-    "@svar-ui/react-core": "2.3.0",
-    "@svar-ui/react-tasklist": "2.3.0",
-    "@svar-ui/react-toolbar": "2.3.0"
+    "@svar-ui/react-comments": "2.3.1",
+    "@svar-ui/react-core": "2.3.1",
+    "@svar-ui/react-tasklist": "2.3.1",
+    "@svar-ui/react-toolbar": "2.3.1"
   },
   "homepage": "https://svar.dev/react/editor/",
   "repository": {

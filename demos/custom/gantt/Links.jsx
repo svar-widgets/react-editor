@@ -28,6 +28,7 @@ function Links({ value }) {
               <div className="wx-C4q2UFW7 wx-links" key={links.title}>
                 <Field label={links.title} position="top">
                   <table onClick={onClick}>
+                    <tbody>
                     {links.data.map((obj) => (
                       <tr key={obj.link.id}>
                         <td className="wx-C4q2UFW7 wx-cell">
@@ -58,6 +59,7 @@ function Links({ value }) {
                         </td>
                       </tr>
                     ))}
+                    </tbody>
                   </table>
                 </Field>
               </div>

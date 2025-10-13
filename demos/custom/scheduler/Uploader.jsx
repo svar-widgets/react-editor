@@ -7,7 +7,7 @@ export default function Uploader(props) {
   const {
     value: valueProp = [],
     uploadURL,
-    onchange: onChange,
+    onChange,
     ...restProps
   } = props;
   const [value, setValue] = useWritableProp(valueProp);

@@ -3,8 +3,7 @@ import Panel from './Panel.jsx';
 import './Layout.css';
 
 export default function Layout(props) {
-  const { css, onclick, onClick: onClickProp, placement, ...restProps } = props;
-  const onClick = onClickProp ?? onclick;
+  const { css, onClick, placement, ...restProps } = props;
 
   function handleClose() {
     onClick && onClick({ item: { id: 'close' } });

@@ -6,43 +6,23 @@ export default function ColorPickerSchema(props) {
     colors,
     clear = false,
     placeholder = null,
-    onchange,
-    onChange: onChangeProp,
+    onChange,
     value,
+    mode = 'border',
   } = props;
-
-  const onChange = onChangeProp || onchange;
-
-  const colorpicker = useMemo(() => value?.colorpicker || 'border', [value]);
-
-  const [values, setValues] = useState(() => ({
-    color: value?.[colorpicker] || '',
-  }));
-
-  useEffect(() => {
-    setValues({ color: value?.[colorpicker] || '' });
-  }, [value, colorpicker]);
-
+  
   const mapedColors = useMemo(
-    () => colors.map((c) => c[c.colorpicker || 'border']),
-    [colors],
+    () => colors.map((c) => c[mode]),
+    [colors, mode],
   );
 
-  useEffect(() => {
-    const val = values;
-    const upd = {
-      ...colors.find((c) => c[c.colorpicker || 'border'] === val.color),
-    };
-    if (onChange) onChange({ value: upd });
-  }, [values, colors, onChange]);
-
   const handleChange = useCallback(({ value }) => {
-    setValues((prev) => ({ ...prev, color: value }));
+    onChange && onChange({ value });
   }, []);
 
   return (
     <ColorSelect
-      value={values.color}
+      value={value}
       colors={mapedColors}
       placeholder={placeholder}
       clear={clear || false}
