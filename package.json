@@ -1,6 +1,6 @@
 {
   "name": "@svar-ui/react-editor",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "React component for building inline, popup, or sidebar forms to edit structured data",
   "productTag": "editor",
   "type": "module",

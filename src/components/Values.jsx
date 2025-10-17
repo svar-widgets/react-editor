@@ -123,7 +123,7 @@ export default function Values({
   }
 
   function handleChanges({ value, key, input }) {
-    const newData = { ...(data || {}), [key]: value };
+    let newData = { ...(data || {}), [key]: value };
     const event = {
       key,
       value,
@@ -134,7 +134,8 @@ export default function Values({
 
     if (!values) return;
 
-    setData(event.update);
+    newData = event.update;
+    setData(newData);
 
     const changes = editors.diff(values, newData);
 
