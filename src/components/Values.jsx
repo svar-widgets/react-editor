@@ -22,6 +22,7 @@ export default function Values({
   onSave,
   onAction,
   onValidation,
+  hotkeys,
 }) {
   const i18n = useContext(context.i18n);
   const _ = i18n.getGroup('editor');
@@ -83,14 +84,17 @@ export default function Values({
   const [actualValues, setActualValues] = useState({});
   const [data, setData] = useState({});
 
+  const d = values;
+
   useEffect(() => {
     if (values !== undefined) {
       setActualValues(deepCopy(values));
       setData(deepCopy(values));
+      if (d.errors) {
+        d.errors = runValidation();
+      }
     }
   }, [values]);
-
-  const d = values;
 
   const [notSaved, setNotSaved] = useState([]);
   useEffect(() => {
@@ -197,6 +201,7 @@ export default function Values({
       data={data}
       editors={editors}
       focus={focus}
+      hotkeys={hotkeys}
       errors={d.errors}
       onClick={handleAction}
       onKeyDown={handleAction}

@@ -85,7 +85,6 @@ export default function FormEditor(props) {
                   }
                   required={editor.required}
                 >
-                  {({ id }) => (
                     <Component2
                       key={key}
                       fieldKey={key}
@@ -101,12 +100,10 @@ export default function FormEditor(props) {
                             });
                         })
                       }
-                      id={id}
                       label={undefined}
                       error={errors && errors[key]}
                       value={data[key]}
                     />
-                  )}
                 </Field>
                 {errors && errors[key] && editor.validationMessage ? (
                   <div className="wx-s2aE1xdZ wx-message">

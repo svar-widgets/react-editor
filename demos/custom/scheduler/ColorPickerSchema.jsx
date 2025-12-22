@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import { ColorSelect } from '@svar-ui/react-core';
 
 export default function ColorPickerSchema(props) {

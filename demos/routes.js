@@ -20,9 +20,9 @@ import Validation from './cases/Validation.jsx';
 import RequiredFields from './cases/RequiredFields.jsx';
 import Locales from './cases/Locales.jsx';
 import Overlay from './cases/Overlay.jsx';
-import Gantt from './cases/Gantt.jsx';
-import Kanban from './cases/Kanban.jsx';
-import Scheduler from './cases/Scheduler.jsx';
+// import Gantt from './cases/Gantt.jsx';
+// import Kanban from './cases/Kanban.jsx';
+// import Scheduler from './cases/Scheduler.jsx';
 
 export const links = [
   ['/base/:skin', 'Basic Form', BasicInit, 'BasicInit'],
@@ -61,8 +61,8 @@ export const links = [
     'SaveValidatedValues',
   ],
   ['/locales/:skin', 'Locales', Locales, 'Locales'],
-  ['/overlay/:skin', 'Overlay', Overlay],
-  ['/gantt/:skin', 'Gantt', Gantt, 'Gantt'],
-  ['/kanban/:skin', 'Kanban', Kanban, 'Kanban'],
-  ['/scheduler/:skin', 'Scheduler', Scheduler, 'Scheduler'],
+  ['/overlay/:skin', 'Overlay', Overlay, 'Overlay'],
+  // ['/gantt/:skin', 'Gantt', Gantt, 'Gantt'],
+  // ['/kanban/:skin', 'Kanban', Kanban, 'Kanban'],
+  // ['/scheduler/:skin', 'Scheduler', Scheduler, 'Scheduler'],
 ];

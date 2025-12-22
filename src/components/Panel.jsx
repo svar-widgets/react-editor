@@ -1,6 +1,6 @@
-import { useContext, useEffect, useMemo, useRef } from 'react';
+import { useContext, useMemo, useRef } from 'react';
 import { context } from '@svar-ui/react-core';
-import { hotkeys } from '../hotkeys';
+import { useHotkeys } from '@svar-ui/lib-react';
 
 import Columns from './Columns.jsx';
 import Toolbar from './buttons/Toolbar.jsx';
@@ -31,6 +31,7 @@ export default function Panel(props) {
     onClick,
     onKeyDown,
     onChange,
+    hotkeys,
   } = props;
 
   const i18n = useContext(context.i18n);
@@ -80,26 +81,44 @@ export default function Panel(props) {
   const buttons = useMemo(() => [...tbar, ...bbar], [tbar, bbar]);
 
   const rootRef = useRef(null);
+  const getHotkeyRef = useRef(null);
+  getHotkeyRef.current = (event, ...args) => {
+    const bi = buttons.findIndex(b => args.includes(b.id));
+    if (bi === -1) return false;
+  
+    const target = event.target;
+    const item = buttons[bi];
 
-  useEffect(() => {
-    const node = rootRef.current;
-    if (!node) return;
+    if (
+      event.key == "Escape" &&
+      (target.closest(".wx-combo") ||
+        target.closest(".wx-multicombo") ||
+        target.closest(".wx-richselect"))
+    )
+    return;
 
-    const cleanup = hotkeys(node, {
-      keys: {
-        'ctrl+s': buttons.find((t) => t.id === 'save'),
-        escape: buttons.find((t) => t.id === 'cancel' || t.id === 'close'),
-        'ctrl+d': buttons.find((t) => t.id === 'delete'),
-      },
-      action: (item) => {
-        onKeyDown && onKeyDown({ item });
-      },
-    });
+    if (
+      event.key == "Delete" &&
+      (target.tagName === "INPUT" || target.tagName === "TEXTAREA")
+    )
+    return;
 
-    return () => {
-      if (typeof cleanup === 'function') cleanup();
+    event.preventDefault();
+    onKeyDown && onKeyDown({ item });    
+  };
+  
+
+  const hotkeysConfig = useMemo(() => {
+    if (hotkeys === false) return {};
+
+    return { 
+      'ctrl+s': ev => getHotkeyRef.current(ev, 'save'),
+      'escape': ev => getHotkeyRef.current(ev, 'cancel', 'close'),
+      'ctrl+d': ev => getHotkeyRef.current(ev, 'delete'),
+      ...(hotkeys || {}),
     };
-  }, [buttons, onKeyDown]);
+  }, [hotkeys]);
+  useHotkeys(hotkeysConfig, rootRef);
 
   return (
     <div className={css ? 'wx-85HDaNoA ' + css : 'wx-85HDaNoA'} ref={rootRef}>
