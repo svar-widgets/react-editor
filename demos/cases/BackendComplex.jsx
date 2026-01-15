@@ -16,11 +16,11 @@ export default function BackendComplex() {
 
   const commentsURL = useMemo(
     () =>
-      new RestURL('https://comments-backend.svar.dev/comments'),
+      new RestURL('https://master--svar-comments-go--dev.webix.io/comments'),
     [],
   );
   const tasksURL = useMemo(
-    () => new RestURL('https://tasklist-backend.svar.dev/tasks'),
+    () => new RestURL('https://master--svar-tasklist-go--dev.webix.io/tasks'),
     [],
   );
 
