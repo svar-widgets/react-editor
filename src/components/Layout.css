@@ -22,8 +22,3 @@
   display: grid;
   grid-template-rows: minmax(0, auto) 1fr;
 }
-
-/* FIXME */
-.wx-sidearea {
-  position: fixed !important;
-}

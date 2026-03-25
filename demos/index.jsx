@@ -6,6 +6,7 @@ import { Globals, Button, Segmented } from '@svar-ui/react-core';
 
 import Willow from '../src/themes/Willow.jsx';
 import WillowDark from '../src/themes/WillowDark.jsx';
+import { WillowIcon, WillowDarkIcon } from './assets/icons/index';
 
 import '@svar-ui/react-core/style.css';
 import '@svar-ui/react-toolbar/style.css';
@@ -14,8 +15,8 @@ import '@svar-ui/react-comments/style.css';
 import '@svar-ui/react-tasklist/style.css';
 
 const skins = [
-  { id: 'willow', label: 'Willow', Component: Willow },
-  { id: 'willow-dark', label: 'Dark', Component: WillowDark },
+  { id: 'willow', label: 'Willow', Component: Willow, icon: WillowIcon },
+  { id: 'willow-dark', label: 'Dark', Component: WillowDark, icon: WillowDarkIcon },
 ];
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       publicName="Editor"
       skins={skins}
       productTag="editor"
+      productLink="editor"
       Globals={Globals}
       Button={Button}
       Segmented={Segmented}
