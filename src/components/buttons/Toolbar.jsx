@@ -8,6 +8,8 @@ function Toolbar({
   top = true,
   onClick,
   onChange: onChangeForm,
+  css = '',
+  layout = 'row',
 }) {
   const onChange = useCallback(
     ({ item, value }) => {
@@ -18,13 +20,14 @@ function Toolbar({
 
   return items.length ? (
     <div
-      className={`wx-66OW1j0R wx-editor-toolbar ${top ? 'wx-topbar' : 'wx-bottom'}`}
+      className={`wx-66OW1j0R wx-editor-toolbar ${css} ${top ? 'wx-topbar' : 'wx-bottom'}`}
     >
       <WxToolbar
         items={items}
         values={values}
         onClick={onClick}
         onChange={onChange}
+        layout={layout}
       />
     </div>
   ) : null;

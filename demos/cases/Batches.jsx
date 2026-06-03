@@ -52,21 +52,23 @@ export default function Batches() {
       </div>
       <div>
         <h3>Tabbar</h3>
-        <div className="wx-qgutpcQy bg">
-          <Editor
-            topBar={false}
-            items={batchItems}
-            values={values}
-            activeBatch={activeBatch}
-          >
-            <div className="wx-qgutpcQy top">
-              <Tabs
-                options={options}
-                value={activeBatch}
-                onChange={({ value }) => setActiveBatch(value)}
-              />
-            </div>
-          </Editor>
+        <div className="wx-qgutpcQy bg" style={{ height: 400 }}>
+          <div className="wx-qgutpcQy bg">
+            <Editor
+              topBar={false}
+              items={batchItems}
+              values={values}
+              activeBatch={activeBatch}
+            >
+              <div className="wx-qgutpcQy top">
+                <Tabs
+                  options={options}
+                  value={activeBatch}
+                  onChange={({ value }) => setActiveBatch(value)}
+                />
+              </div>
+            </Editor>
+          </div>
         </div>
       </div>
       <div>

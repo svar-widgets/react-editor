@@ -127,7 +127,6 @@ export default function Panel(props) {
         items={tbar}
         values={data}
         onClick={onClick}
-        onChange={onChange}
       />
       <div
         className={`wx-85HDaNoA wx-content${layout === 'columns' ? ' wx-layout-columns' : ''}`}
@@ -148,7 +147,6 @@ export default function Panel(props) {
           values={data}
           top={false}
           onClick={onClick}
-          onChange={onChange}
         />
       </div>
     </div>
