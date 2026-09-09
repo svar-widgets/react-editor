@@ -3,7 +3,8 @@ import Editor from './FormEditor.jsx';
 import './Columns.css';
 
 function Columns(props) {
-  const { editors, data, layout, errors, focus, onClick, onChange } = props;
+  const { editors, data, layout, errors, focus, readonly, onClick, onChange } =
+    props;
 
   const columns = useMemo(() => {
     let cols = [];
@@ -37,6 +38,7 @@ function Columns(props) {
         <div className="wx-bNrSbszs wx-left">
           <Editor
             editors={columns[0]}
+            readonly={readonly}
             data={data}
             errors={errors}
             onClick={onClick}
@@ -48,6 +50,7 @@ function Columns(props) {
             editors={columns[1]}
             data={data}
             focus={focus}
+            readonly={readonly}
             errors={errors}
             onClick={onClick}
             onChange={onChange}
@@ -62,6 +65,7 @@ function Columns(props) {
       editors={editors}
       data={data}
       focus={focus}
+      readonly={readonly}
       errors={errors}
       onClick={onClick}
       onChange={onChange}

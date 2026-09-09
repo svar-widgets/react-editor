@@ -22,3 +22,14 @@
   display: grid;
   grid-template-rows: minmax(0, auto) 1fr;
 }
+
+.wx-editor-fullscreen.wx-Ps8Vyc31 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--wx-background);
+  overflow: auto;
+  z-index: var(--wx-popup-z-index);
+}

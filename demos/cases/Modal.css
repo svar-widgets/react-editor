@@ -1,0 +1,15 @@
+.message.wx-Bg6J67fv {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.toolbar.wx-Bg6J67fv {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.toolbar.wx-Bg6J67fv .item.wx-Bg6J67fv {
+  margin-left: 20px;
+}

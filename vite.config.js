@@ -41,9 +41,8 @@ export default defineConfig(({ command, mode }) => {
     ...rollupOptions,
     external: [
       ...rollupOptions.external,
-      // the public build renames deps to the @svar-ui scope, so both must be external
-      /^@svar\//,
-      /^@svar-ui\//,
+      /^@wx\//, // matches all modules starting with "@svar-ui/"
+      /^@svar-ui\//, // matches all modules starting with "@svar-ui/"
     ],
   };
 

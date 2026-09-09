@@ -1,0 +1,9 @@
+.wx-tinymce.wx-aady1hHu {
+  height: 100%;
+  width: var(--wx-field-width);
+  max-width: 100%;
+}
+.wx-tinymce.wx-aady1hHu > textarea {
+  height: 100%;
+  width: 100%;
+}

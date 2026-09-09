@@ -271,6 +271,20 @@
   gap: 6px;
 }
 
+.wx-demos.group-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--wx-color-font-alt);
+  padding: 20px 16px 2px 16px;
+}
+
+.wx-demos.box-links > .wx-demos.group-title:first-child {
+  margin-top: 0;
+  border-top: none;
+}
+
 .wx-demos.hint {
   font-size: 16px;
   font-weight: 500;

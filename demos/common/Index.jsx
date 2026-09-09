@@ -1,10 +1,10 @@
-import { useState, useCallback, useEffect } from 'react';
+import { Fragment, useState, useCallback, useEffect } from 'react';
 import { HashRouter, useNavigate } from 'react-router-dom';
 import { Willow } from '@svar-ui/react-core';
 
 import Router from './Router';
 import Link from './Link';
-import { links } from '../routes';
+import { links, flatLinks } from '../routes';
 import { GitHubLogoIcon, LogoIcon } from '../assets/icons';
 import './Index.css';
 
@@ -53,11 +53,11 @@ function DemoExplorerContent({
       setSkin(newSkin);
 
       const targetPage = `/${page}/:skin`;
-      const matched = links.find((a) => a[0] === targetPage);
+      const matched = flatLinks.find((a) => a[0] === targetPage);
       if (matched) {
         setTitle(matched[1]);
-        const name = matched[3] || matched[1];
-        setGithubLink(`${baseLink}${name}.jsx`);
+        const name = matched[3]?.file ?? matched[1];
+        setGithubLink(`${baseLink}${name.replace(/\s+/g, '')}.jsx`);
       }
     },
     [],
@@ -115,13 +115,20 @@ function DemoExplorerContent({
             </div>
           </div>
           <div className="wx-demos box-links">
-            {links.map((data) => (
-              <Link
-                key={data[0]}
-                data={data}
-                skin={skin}
-                onClick={() => isMobileView && setShow(false)}
-              />
+            {links.map((group) => (
+              <Fragment key={group.group}>
+                {group.group ? (
+                  <div className="wx-demos group-title">{group.group}</div>
+                ) : null}
+                {group.items.map((data) => (
+                  <Link
+                    key={data[0]}
+                    data={data}
+                    skin={skin}
+                    onClick={() => isMobileView && setShow(false)}
+                  />
+                ))}
+              </Fragment>
             ))}
           </div>
         </div>

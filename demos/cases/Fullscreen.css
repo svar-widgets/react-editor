@@ -1,0 +1,15 @@
+.message.wx-JodhWOx8 {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.toolbar.wx-JodhWOx8 {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.toolbar.wx-JodhWOx8 .item.wx-JodhWOx8 {
+  margin-left: 20px;
+}

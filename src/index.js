@@ -8,6 +8,9 @@ import WillowDark from './themes/WillowDark.jsx';
 
 import ReadOnly from './components/sections/ReadOnly.jsx';
 import Section from './components/sections/Section.jsx';
+import Attachments from './components/sections/Files.jsx';
+import CodeMirror from './components/sections/CodeMirror.jsx';
+import TinyMCE from './components/sections/TinyMCE.jsx';
 import { Text } from '@svar-ui/react-core';
 import { TextArea } from '@svar-ui/react-core';
 import { Checkbox } from '@svar-ui/react-core';
@@ -19,7 +22,14 @@ registerEditorItem('checkbox', Checkbox);
 registerEditorItem('readonly', ReadOnly);
 registerEditorItem('section', Section);
 
-import { env, setEnv } from '@svar-ui/lib-dom';
-setEnv(env);
-
-export { registerEditorItem, Form, Editor, Material, Willow, WillowDark };
+export {
+  registerEditorItem,
+  Form,
+  Editor,
+  Material,
+  Willow,
+  WillowDark,
+  Attachments,
+  CodeMirror,
+  TinyMCE,
+};

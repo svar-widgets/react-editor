@@ -1,3 +1,10 @@
+## 2.7.0
+
+- TinyMCE and CodeMirror sections
+- File attachments section
+- fullscreen layout option
+- ability to register form items for the `readonly` mode
+
 ## 2.6.1
 
 - Using React Core v2.6.1
@@ -17,13 +24,9 @@
 
 ## 2.4.3
 
-### Fixes
-
 - Sourcemap included
 
 ## 2.4.0
-
-### New features
 
 - Ability to configure custom hotkeys
 
@@ -34,8 +37,6 @@
 
 ## 2.3.0
 
-### New features
-
 - TypeScript definitions
 
 ### Updates
@@ -44,7 +45,5 @@
 - Item `comp` can point directly to Svelte Component without registering
 
 ## 2.2.0
-
-### Initial features
 
 Provides all the same functionality as Svelte Editor 2.2.0

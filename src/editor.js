@@ -29,16 +29,53 @@ function rawSetter(key) {
   return (obj, v) => (obj[key] = v);
 }
 
+function compositeGetter(keys) {
+  const getters = keys.map((k) => ({ k, get: rawGetter(k) }));
+  return (obj) => {
+    const out = {};
+    getters.forEach(({ k, get }) => (out[k] = get(obj)));
+    return out;
+  };
+}
+function compositeSetter(keys) {
+  const setters = keys.map((k) => ({ k, set: rawSetter(k) }));
+  return (obj, v) => {
+    setters.forEach(({ k, set }) => set(obj, v?.[k]));
+  };
+}
+
 export function itemsToEditors(sections) {
   const config = sections.map((s) => {
     const obj = { ...s };
     if (s.config) Object.assign(obj, s.config);
 
     obj.key = s.key || uid();
-    obj.setter = s.setter || rawSetter(s.key);
-    obj.getter = s.getter || rawGetter(s.key);
+    obj.setter =
+      s.setter || (s.keys ? compositeSetter(s.keys) : rawSetter(s.key));
+    obj.getter =
+      s.getter || (s.keys ? compositeGetter(s.keys) : rawGetter(s.key));
+
     return obj;
   });
+
+  // resolves both editor keys and multi-field sub-keys to the owning editor
+  const byKey = new Map();
+  config.forEach((ed) => {
+    if (!byKey.has(ed.key)) byKey.set(ed.key, ed);
+    ed.keys?.forEach((k) => {
+      if (!byKey.has(k)) byKey.set(k, ed);
+    });
+  });
+
+  const resolveFields = (changes) => {
+    if (!changes?.length) return config;
+    const out = new Set();
+    changes.forEach((key) => {
+      const ed = byKey.get(key);
+      if (ed) out.add(ed);
+    });
+    return [...out];
+  };
 
   const getValues = (raw) => {
     const out = {};
@@ -51,10 +88,7 @@ export function itemsToEditors(sections) {
   };
 
   const setValues = (out, values, changes) => {
-    const fields = changes.length
-      ? changes.map((key) => config.find((a) => a.key === key))
-      : config;
-    fields.forEach((ed) => {
+    resolveFields(changes).forEach((ed) => {
       if (ed.setter) ed.setter(out, values[ed.key]);
       else out[ed.key] = values[ed.key];
     });
@@ -65,13 +99,21 @@ export function itemsToEditors(sections) {
   const diff = (raw, values) => {
     const initial = getValues(raw);
     const changes = [];
+    // we can have a situation when initial value is undefined
+    // but empty editor will return empty value instead of undefined
+    // this behavior is correct, but we need to ignore this case
+    const changed = (a, b) => !isSame(a, b) && (a !== undefined || !!b);
+
     config.forEach((ed) => {
       const a = initial[ed.key];
       const b = values[ed.key];
-      // we can have a situation when initial value is undefined
-      // but empty editor will return empty value instead of undefined
-      // this behavior is correct, but we need to ignore this case
-      if (!isSame(a, b) && (a !== undefined || !!b)) {
+      if (ed.keys?.length) {
+        // multi-field item: compare composite member-wise,
+        // report the real field keys
+        ed.keys.forEach((k) => {
+          if (changed(a?.[k], b?.[k])) changes.push(k);
+        });
+      } else if (changed(a, b)) {
         changes.push(ed.key);
       }
     });
@@ -83,19 +125,20 @@ export function itemsToEditors(sections) {
     let any = 0;
     const errors = {};
 
-    const fields = changes?.length
-      ? changes.map((key) => config.find((a) => a.key === key))
-      : config;
+    // for a multi-field item "required" means every field has a truthy value
+    const missing = (ed, v) =>
+      ed.keys?.length ? ed.keys.some((k) => !v?.[k]) : !v;
 
-    fields.forEach((ed) => {
-      if (ed.required && !values[ed.key]) {
+    resolveFields(changes).forEach((ed) => {
+      const v = ed.getter(values);
+      if (ed.required && missing(ed, v)) {
         errors[ed.key] = {
           errorType: 'required',
         };
         ed.validationMessage =
           ed.validationMessage ?? _('This field is required');
         any++;
-      } else if (ed.validation && !ed.validation(values[ed.key])) {
+      } else if (ed.validation && !ed.validation(v)) {
         errors[ed.key] = {
           errorType: 'validation',
         };

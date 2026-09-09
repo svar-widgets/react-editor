@@ -1,14 +1,22 @@
-.variations.wx-rHquWPuW {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.message.wx-SNwIo1tm {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
 }
-.variations.wx-rHquWPuW > div {
-  margin: 0 20px 60px 20px;
-  width: 400px;
+.list.wx-SNwIo1tm {
+  margin: 10px;
 }
-.bg.wx-rHquWPuW {
-  border-top: 1px solid #ccc;
-  padding: 10px;
-  height: 100%;
+.item.wx-SNwIo1tm {
+  margin: 10px;
+  width: 360px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #eee;
+  padding: 0px 15px 10px 15px;
+}
+.item.wx-SNwIo1tm.active {
+  border-left: 3px solid #2e51ff;
+  box-shadow: 0 0 5px #aaa;
+  padding-left: 13px;
 }

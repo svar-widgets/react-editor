@@ -30,6 +30,9 @@ export default [
         localStorage: 'readonly',
         fetch: 'readonly',
         FormData: 'readonly',
+        InputEvent: 'readonly',
+        Event: 'readonly',
+        HTMLInputElement: 'readonly',
       },
     },
     plugins: {

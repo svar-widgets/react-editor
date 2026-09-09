@@ -6,7 +6,7 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom';
-import { links } from '../routes';
+import { flatLinks } from '../routes';
 
 export default function Router({ onRouteChange }) {
   const location = useLocation();
@@ -25,7 +25,7 @@ export default function Router({ onRouteChange }) {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/base/willow" replace />} />
-      {links.map(([path, , Component]) => (
+      {flatLinks.map(([path, , Component]) => (
         <Route key={path} path={path} element={<Component />} />
       ))}
     </Routes>

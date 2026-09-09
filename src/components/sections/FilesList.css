@@ -1,0 +1,67 @@
+.wx-files.wx-aaeLPti4 {
+  width: var(--wx-field-width);
+  max-width: 100%;
+}
+.wx-list.wx-aaeLPti4 {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+.wx-file.wx-aaeLPti4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--wx-input-border-radius);
+}
+.wx-file.wx-aaeLPti4:hover {
+  background: var(--wx-background-alt);
+}
+.wx-file-icon.wx-aaeLPti4 {
+  color: var(--wx-color-font-alt);
+}
+.wx-name.wx-aaeLPti4 {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--wx-color-font);
+}
+a.wx-name.wx-aaeLPti4 {
+  color: var(--wx-color-link);
+  text-decoration: none;
+}
+a.wx-name.wx-aaeLPti4:hover {
+  text-decoration: underline;
+}
+.wx-uploading.wx-aaeLPti4 .wx-name,
+.wx-failed.wx-aaeLPti4 .wx-name {
+  color: var(--wx-color-font-alt);
+}
+.wx-status.wx-aaeLPti4 {
+  font-size: 12px;
+  color: var(--wx-color-font-alt);
+}
+.wx-status.wx-error.wx-aaeLPti4 {
+  color: var(--wx-color-danger);
+}
+.wx-remove.wx-aaeLPti4 {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--wx-color-font-alt);
+  font-size: var(--wx-icon-size);
+}
+.wx-remove.wx-aaeLPti4:hover {
+  color: var(--wx-color-danger);
+}
+.wx-input.wx-aaeLPti4 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}

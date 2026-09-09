@@ -3,6 +3,10 @@
   --wx-field-width: 600px;
   margin: 12px 20px 0;
 }
+.wx-sections-single.wx-s2aE1xdZ {
+  margin: 0 20px;
+  height: 100%;
+}
 .wx-message.wx-s2aE1xdZ {
   margin-top: calc(var(--wx-field-gutter) * -1);
   font-size: 12px;

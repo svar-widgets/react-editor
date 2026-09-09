@@ -1,0 +1,15 @@
+.message.wx-bFrHPSUe {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+.toolbar.wx-bFrHPSUe {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.toolbar.wx-bFrHPSUe .item.wx-bFrHPSUe {
+  margin-left: 20px;
+}

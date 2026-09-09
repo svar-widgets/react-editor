@@ -83,38 +83,37 @@ export default function Panel(props) {
   const rootRef = useRef(null);
   const getHotkeyRef = useRef(null);
   getHotkeyRef.current = (event, ...args) => {
-    const bi = buttons.findIndex(b => args.includes(b.id));
+    const bi = buttons.findIndex((b) => args.includes(b.id));
     if (bi === -1) return false;
-  
+
     const target = event.target;
     const item = buttons[bi];
 
     if (
-      event.key == "Escape" &&
-      (target.closest(".wx-combo") ||
-        target.closest(".wx-multicombo") ||
-        target.closest(".wx-richselect"))
+      event.key == 'Escape' &&
+      (target.closest('.wx-combo') ||
+        target.closest('.wx-multicombo') ||
+        target.closest('.wx-richselect'))
     )
-    return;
+      return;
 
     if (
-      event.key == "Delete" &&
-      (target.tagName === "INPUT" || target.tagName === "TEXTAREA")
+      event.key == 'Delete' &&
+      (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')
     )
-    return;
+      return;
 
     event.preventDefault();
-    onKeyDown && onKeyDown({ item });    
+    onKeyDown && onKeyDown({ item });
   };
-  
 
   const hotkeysConfig = useMemo(() => {
     if (hotkeys === false) return {};
 
-    return { 
-      'ctrl+s': ev => getHotkeyRef.current(ev, 'save'),
-      'escape': ev => getHotkeyRef.current(ev, 'cancel', 'close'),
-      'ctrl+d': ev => getHotkeyRef.current(ev, 'delete'),
+    return {
+      'ctrl+s': (ev) => getHotkeyRef.current(ev, 'save'),
+      escape: (ev) => getHotkeyRef.current(ev, 'cancel', 'close'),
+      'ctrl+d': (ev) => getHotkeyRef.current(ev, 'delete'),
       ...(hotkeys || {}),
     };
   }, [hotkeys]);
@@ -138,6 +137,7 @@ export default function Panel(props) {
           data={data}
           focus={focus}
           errors={errors}
+          readonly={readonly}
           onClick={onClick}
           onChange={onChange}
         />

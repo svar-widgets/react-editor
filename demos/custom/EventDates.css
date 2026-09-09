@@ -1,0 +1,22 @@
+.wx-event-dates.wx-aaej5EPx {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wx-date.wx-aaej5EPx {
+  flex: 1;
+}
+.wx-time.wx-aaej5EPx {
+  flex: none;
+  width: 96px;
+}
+.wx-full-day.wx-aaej5EPx {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.wx-error.wx-aaej5EPx input {
+  border-color: var(--wx-color-danger);
+}

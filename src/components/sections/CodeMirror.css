@@ -1,0 +1,14 @@
+.wx-codemirror.wx-aaamfxKx {
+  height: 100%;
+  width: var(--wx-field-width);
+  max-width: 100%;
+}
+.wx-codemirror.wx-aaamfxKx > .cm-editor {
+  height: 100%;
+}
+.wx-codemirror.wx-aaamfxKx > .cm-focused {
+  outline: none;
+}
+.wx-field-control .wx-codemirror.wx-aaamfxKx .cm-editor {
+  height: 200px;
+}

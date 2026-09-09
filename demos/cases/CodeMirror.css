@@ -1,0 +1,39 @@
+.message.wx-aac2hlHQ {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+}
+
+.files.wx-aac2hlHQ {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.demo-file.wx-aac2hlHQ {
+  padding: 5px 10px;
+  background-color: #eee;
+  color: #444;
+  line-height: 33px;
+  height: 40px;
+  width: 200px;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.demo-file.wx-aac2hlHQ:hover {
+  background-color: #e2e2e2;
+}
+
+.demo-file.active.wx-aac2hlHQ {
+  background-color: #2196f3;
+  color: #fff;
+  font-weight: 600;
+}

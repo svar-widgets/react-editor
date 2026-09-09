@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useContext } from 'react';
+import { useState, useEffect, useMemo, useRef, useContext } from 'react';
 import { itemsToEditors } from '../editor';
 import { deepCopy, isSame } from '@svar-ui/lib-state';
 import { useWritableProp } from '@svar-ui/lib-react';
@@ -74,24 +74,48 @@ export default function Values({
     if (readonly) {
       return {
         ...editorsObj,
-        config: editorsObj.config.map((s) => ({ ...s, comp: 'readonly' })),
         diff: () => [],
       };
     }
     return editorsObj;
   }, [items, activatedSection, activeBatch, readonly]);
 
-  const [actualValues, setActualValues] = useState({});
-  const [data, setData] = useState({});
+  // multi-field items keep a composite object under the item key,
+  // which does not exist in the raw values shape
+  const buildData = (raw, config) => {
+    const next = deepCopy(raw);
+    if (next) {
+      config.forEach((ed) => {
+        if (ed.keys?.length) next[ed.key] = ed.getter(next);
+      });
+    }
+    return next;
+  };
+
+  // Svelte fills these in `$effect.pre`, which runs before children render.
+  // React effects run after paint, so seed the state during the first render
+  // instead - otherwise items read an empty `data` on mount.
+  const [actualValues, setActualValues] = useState(
+    () => deepCopy(valuesProp) ?? {},
+  );
+  const [data, setData] = useState(
+    () => buildData(valuesProp, editors.config) ?? {},
+  );
 
   const d = values;
 
+  const firstRun = useRef(true);
   useEffect(() => {
+    if (firstRun.current) {
+      firstRun.current = false;
+      return;
+    }
     if (values !== undefined) {
-      setActualValues(deepCopy(values));
-      setData(deepCopy(values));
+      const nextActual = deepCopy(values);
+      setActualValues(nextActual);
+      setData(buildData(values, editors.config));
       if (d.errors) {
-        d.errors = runValidation();
+        d.errors = runValidation(undefined, nextActual);
       }
     }
   }, [values]);
@@ -105,11 +129,14 @@ export default function Values({
     return [...new Set(arr)];
   }
 
-  function runValidation(changes) {
-    const check = editors.validateValues(actualValues, changes, _);
+  // `source` defaults to state, but callers that have just computed fresh
+  // values must pass them in: Svelte reads the updated `$state` synchronously,
+  // while a React setter leaves the render closure holding the old object.
+  function runValidation(changes, source = actualValues) {
+    const check = editors.validateValues(source, changes, _);
 
     if (!isSame(check, d.errors)) {
-      onValidation && onValidation({ errors: check, values: actualValues });
+      onValidation && onValidation({ errors: check, values: source });
     }
 
     return check;
@@ -154,11 +181,12 @@ export default function Values({
       const fieldsToValidate = autoSave
         ? []
         : getUniqueFields([...changes, ...Object.keys(d.errors ?? {}), key]);
-      d.errors = runValidation(fieldsToValidate);
+      d.errors = runValidation(fieldsToValidate, newActualValues);
       handleUpdate(changes, newData);
     } else {
       const errorsFields = Object.keys(d.errors ?? {});
-      if (errorsFields.length) d.errors = runValidation(errorsFields);
+      if (errorsFields.length)
+        d.errors = runValidation(errorsFields, newActualValues);
       setNotSaved([]);
     }
   }

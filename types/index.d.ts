@@ -6,6 +6,11 @@ export declare const Editor: FC<{
   items?: {
     comp?: string | FC<any>;
     key?: string;
+    /** multi-field item: the comp receives/emits a composite object keyed by
+     * these field names, while changes report the real field keys */
+    keys?: (string | number)[];
+    /** render the item without a Field wrapper, filling the whole form */
+    fill?: boolean;
     label?: string;
     labelTemplate?: (value: any) => string;
     column?: 'right' | 'left';
@@ -33,7 +38,7 @@ export declare const Editor: FC<{
   bottomBar?: boolean | { items: IToolbarItem[] };
   autoSave?: boolean;
   layout?: 'default' | 'columns';
-  placement?: 'inline' | 'sidebar' | 'modal';
+  placement?: 'inline' | 'sidebar' | 'modal' | 'fullscreen';
   readonly?: boolean;
   focus?: boolean;
   onChange?: (ev: {
@@ -65,7 +70,62 @@ export declare const Editor: FC<{
 export declare function registerEditorItem(
   type: string,
   handler: FC<any>,
+  config?: { readonly?: boolean } | null,
 ): void;
+
+export interface IUploadedFile {
+  id: string | number;
+  name: string;
+  url?: string;
+  size?: number;
+  /** "client" while uploading, "error" on failure; absent once stored */
+  status?: 'client' | 'server' | 'error';
+  /** raw File, present only on in-flight upload objects */
+  file?: File;
+  [key: string]: any;
+}
+
+export declare const Attachments: FC<{
+  value?: IUploadedFile[] | string | number;
+  /** resolves the display list when value is a master record id */
+  ondata?: (
+    value: IUploadedFile[] | string | number,
+  ) => Promise<IUploadedFile[]> | IUploadedFile[];
+  uploadURL?: string | ((file: IUploadedFile) => Promise<Record<string, any>>);
+  accept?: string;
+  multiple?: boolean;
+  disabled?: boolean;
+  readonly?: boolean;
+  onChange?: (ev: {
+    value: IUploadedFile[];
+    action: 'add' | 'delete';
+    file: IUploadedFile;
+    originalValue?: IUploadedFile[] | string | number;
+  }) => void;
+  onAction?: (ev: {
+    action: 'add-file' | 'delete-file';
+    file: IUploadedFile;
+    value: IUploadedFile[];
+  }) => void;
+}>;
+
+export declare const CodeMirror: FC<{
+  value: string;
+  onChange?: (ev: { value: string }) => void;
+  focus?: boolean;
+  theme?: string;
+  language?: string;
+  readonly?: boolean;
+}>;
+
+export declare const TinyMCE: FC<{
+  value: string;
+  onChange?: (ev: { value: string }) => void;
+  licenseKey?: string;
+  toolbar?: string;
+  focus?: boolean;
+  skin?: string;
+}>;
 
 export declare const Willow: FC<{
   fonts?: boolean;

@@ -1,7 +1,6 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Editor } from '../../src';
 import { getData } from '../data';
-import './Validation.css';
 
 function Validation() {
   const { items, values } = useMemo(() => {
@@ -9,12 +8,33 @@ function Validation() {
     return { items, values };
   }, []);
 
+  useEffect(() => {
+    // trigger validation
+    const timer = setTimeout(() => {
+      const input = document.querySelector('.wx-editor .wx-text input');
+      if (!input) return;
+
+      // bypass React's value tracker, otherwise the synthetic input
+      // event is swallowed as a no-op change
+      const setter = Object.getOwnPropertyDescriptor(
+        HTMLInputElement.prototype,
+        'value',
+      ).set;
+      setter.call(input, '');
+      input.dispatchEvent(
+        new InputEvent('input', {
+          inputType: 'deleteContentBackward',
+          bubbles: true,
+        }),
+      );
+      input.focus();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div style={{ padding: '10px' }}>
-      <h3>Editor with validation and error messages</h3>
-      <div className="wx-hxQnm3ZR bg">
-        <Editor items={items} values={values} topBar={false} />
-      </div>
+      <Editor items={items} values={values} topBar={false} />
     </div>
   );
 }
