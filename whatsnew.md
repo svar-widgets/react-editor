@@ -1,3 +1,11 @@
+## 2.7.1
+
+### Fixes
+
+- Event and hotkey props of Editor and Form are missing in the type definitions
+- The `format` prop of the ReadOnly section is missing in the type definitions
+- Editor locales have no type definitions
+
 ## 2.7.0
 
 - TinyMCE and CodeMirror sections
